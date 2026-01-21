@@ -1,0 +1,23 @@
+{
+  "source": "mock_spotify_api",
+  "endpoint": "GET /v1/audio-features?ids=...",
+  "pulled_at_utc": "2026-01-08T00:00:00Z",
+  "audio_features": [
+    {
+      "track_id": "3n3Ppam7vgaVa1iaRUc9Lp",
+      "danceability": 0.601,
+      "energy": 0.932,
+      "valence": 0.747,
+      "tempo": 148.0,
+      "loudness": -4.3
+    },
+    {
+      "track_id": "7ouMYWpwJ422jRcDASZB7P",
+      "danceability": 0.429,
+      "energy": 0.661,
+      "valence": 0.319,
+      "tempo": 173.0,
+      "loudness": -7.6
+    }
+  ]
+}

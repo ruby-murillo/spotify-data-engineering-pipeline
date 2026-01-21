@@ -1,0 +1,20 @@
+﻿[
+  {
+    "track_id": "t_001",
+    "track_name": "Neon Nights",
+    "artist_name": "Ruby & The Data",
+    "album_name": "Pipeline Dreams",
+    "release_date": "2024-06-01",
+    "duration_ms": 210000,
+    "popularity": 55
+  },
+  {
+    "track_id": "t_002",
+    "track_name": "SQL Sunrise",
+    "artist_name": "Window Functions",
+    "album_name": "Analytics Vol. 1",
+    "release_date": "2023-11-20",
+    "duration_ms": 185000,
+    "popularity": 62
+  }
+]

@@ -1,0 +1,167 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260120102729
+Username: LALV1001128\Admin
+RunAs User: LALV1001128\Admin
+Configuration Name: 
+Machine: LALV1001128 (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 11208
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is logs\day3\Spotify_Day3_Transcript.txt
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) date
+
+Tuesday, January 20, 2026 10:28:41 AM
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python .\src\migrations\day3_create_clean_tracks.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations\day3_create_clean_tracks.py", l
+ine 114, in <module>
+    run()
+    ~~~^^
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations\day3_create_clean_tracks.py", l
+ine 108, in run
+    with get_conn() as conn:
+         ~~~~~~~~^^
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\utils\db.py", line 6, in get_conn
+    return psycopg2.connect(
+           ~~~~~~~~~~~~~~~~^
+        host=os.getenv("DB_HOST", "localhost"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        password=os.getenv("DB_PASSWORD"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\.venv\Lib\site-packages\psycopg2\__init__.py",
+ line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: fe_sendauth:
+ no password supplied
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad .env
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) pip show python-dotenv
+Name: python-dotenv
+Version: 1.2.1
+Summary: Read key-value pairs from a .env file and set them as environment variables
+Home-page:
+Author:
+Author-email: Saurabh Kumar <me+github@saurabh-kumar.com>
+License-Expression: BSD-3-Clause
+Location: C:\Users\Admin\Projects\spotify-data-pipeline\.venv\Lib\site-packages
+Requires:
+Required-by:
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\utils\db.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python -c "import os; from dotenv import load_dotenv; load_dotenv('.env'); print(os.getenv('DB_PASSWORD'))"
+postgres_dev_2026
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\migrations\day3_create_clean_tracks.py
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\qa_day3_clean_tracks.py
+C:\Users\Admin\Projects\spotify-data-pipeline\.venv\Scripts\python.exe: can't open file 'C:\\Users\\Admin\\Projects\\spotify-data-
+pipeline\\src\\qa_day3_clean_tracks.py': [Errno 2] No such file or directory
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\qa_day3_clean_tracks.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\qa_day3_clean_tracks.py", line 1, in <module>
+    from src.utils.db import get_conn  # adjust if your file name differs
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'src'
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\qa_day3_clean_tracks.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\qa_day3_clean_tracks.py", line 8, in <module>
+    from src.utils.db import get_conn
+ModuleNotFoundError: No module named 'src'
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\qa_day3_clean_tracks.py
+
+--- raw_rowcount ---
+(12,)
+
+--- clean_rowcount ---
+(5,)
+
+--- clean_distinct_track_id ---
+(4,)
+
+--- clean_dupes_track_id ---
+
+--- clean_null_track_id ---
+(1,)
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\qa_day3_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\migrations\day3_create_clean_tracks.py
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\migrations\day3_create_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\migrations\day3_create_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\migrations\day3_create_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\qa_day3_clean_tracks.py
+
+--- raw_rowcount ---
+(12,)
+
+--- clean_rowcount ---
+(5,)
+
+--- clean_distinct_track_id ---
+(4,)
+
+--- clean_dupes_track_id ---
+
+--- clean_null_track_id ---
+(1,)
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260120110354
+**********************

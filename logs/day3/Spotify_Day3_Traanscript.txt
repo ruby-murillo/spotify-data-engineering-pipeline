@@ -1,0 +1,558 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260120093206
+Username: LALV1001128\Admin
+RunAs User: LALV1001128\Admin
+Configuration Name: 
+Machine: LALV1001128 (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 13148
+PSVersion: 5.1.26100.2161
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.2161
+BuildVersion: 10.0.26100.2161
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is logs\day3\Spotify_Day3_Traanscript.txt
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) date
+
+Tuesday, January 20, 2026 9:32:26 AM
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) pwd
+
+Path
+----
+C:\Users\Admin\Projects\spotify-data-pipeline
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls
+
+
+    Directory: C:\Users\Admin\Projects\spotify-data-pipeline
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/16/2026   9:40 AM                -p
+d-----         1/14/2026  11:22 AM                .venv
+d-----         1/16/2026   9:59 AM                data
+d-----         1/16/2026   9:40 AM                logs
+d-----         1/16/2026  10:56 AM                src
+d-----          1/7/2026   3:42 PM                venv
+-a----          1/8/2026  12:51 PM            177 .env
+-a----          1/8/2026  12:52 PM             11 .gitignore
+-a----         1/16/2026   9:50 AM              0 cd
+-a----          1/7/2026   4:56 PM            827 day0_setup_cmd_history.txt
+-a----         1/14/2026  11:39 AM             48 requirements.txt
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) netstat -an | findstr 5432
+  TCP    0.0.0.0:5432           0.0.0.0:0              LISTENING
+  TCP    [::]:5432              [::]:0                 LISTENING
+  TCP    [::1]:5432             [::1]:50483            ESTABLISHED
+  TCP    [::1]:5432             [::1]:50488            ESTABLISHED
+  TCP    [::1]:5432             [::1]:50506            ESTABLISHED
+  TCP    [::1]:50483            [::1]:5432             ESTABLISHED
+  TCP    [::1]:50488            [::1]:5432             ESTABLISHED
+  TCP    [::1]:50506            [::1]:5432             ESTABLISHED
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) psql -h locaaalhost -p 5432 -U postgres
+psql : The term 'psql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ psql -h locaaalhost -p 5432 -U postgres
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (psql:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+psql : The term 'psql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ psql -h locaaalhost -p 5432 -U postgres
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (psql:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) psql -h localhost -p 5432 -U postgres
+psql : The term 'psql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ psql -h localhost -p 5432 -U postgres
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (psql:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+psql : The term 'psql' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ psql -h localhost -p 5432 -U postgres
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (psql:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Get-Service | Where-Object {$_.Name -like "*postgres*" }
+
+Status   Name               DisplayName
+------   ----               -----------
+Running  postgresql-x64-17  postgresql-x64-17 - PostgreSQL Serv...
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) netstat -an | finstr 5432
+finstr : The term 'finstr' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:15
++ netstat -an | finstr 5432
++               ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (finstr:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+finstr : The term 'finstr' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:15
++ netstat -an | finstr 5432
++               ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (finstr:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) netstat -an | findstr 5432
+  TCP    0.0.0.0:5432           0.0.0.0:0              LISTENING
+  TCP    [::]:5432              [::]:0                 LISTENING
+  TCP    [::1]:5432             [::1]:50483            ESTABLISHED
+  TCP    [::1]:5432             [::1]:50488            ESTABLISHED
+  TCP    [::1]:5432             [::1]:50506            ESTABLISHED
+  TCP    [::1]:50483            [::1]:5432             ESTABLISHED
+  TCP    [::1]:50488            [::1]:5432             ESTABLISHED
+  TCP    [::1]:50506            [::1]:5432             ESTABLISHED
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) date
+
+Tuesday, January 20, 2026 9:41:17 AM
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls
+
+
+    Directory: C:\Users\Admin\Projects\spotify-data-pipeline
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/16/2026   9:40 AM                -p
+d-----         1/14/2026  11:22 AM                .venv
+d-----         1/16/2026   9:59 AM                data
+d-----         1/16/2026   9:40 AM                logs
+d-----         1/16/2026  10:56 AM                src
+d-----          1/7/2026   3:42 PM                venv
+-a----          1/8/2026  12:51 PM            177 .env
+-a----          1/8/2026  12:52 PM             11 .gitignore
+-a----         1/16/2026   9:50 AM              0 cd
+-a----          1/7/2026   4:56 PM            827 day0_setup_cmd_history.txt
+-a----         1/14/2026  11:39 AM             48 requirements.txt
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls src
+
+
+    Directory: C:\Users\Admin\Projects\spotify-data-pipeline\src
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/16/2026  11:01 AM                migrations
+d-----         1/16/2026  10:55 AM                utils
+d-----         1/16/2026  10:56 AM                __pycache__
+-a----         1/16/2026  10:49 AM            845 main.py
+-a----         1/16/2026  10:46 AM            455 qa_day2_counts.py
+-a----         1/16/2026  10:55 AM              0 __init__.py
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls\src\migrations
+ls\src\migrations : The module 'ls' could not be loaded. For more information, run 'Import-Module ls'.
+At line:1 char:1
++ ls\src\migrations
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ls\src\migrations:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+ls\src\migrations : The module 'ls' could not be loaded. For more information, run 'Import-Module ls'.
+At line:1 char:1
++ ls\src\migrations
++ ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (ls\src\migrations:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CouldNotAutoLoadModule
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls \src\migrations
+ls : Cannot find path 'C:\src\migrations' because it does not exist.
+At line:1 char:1
++ ls \src\migrations
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\src\migrations:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ls : Cannot find path 'C:\src\migrations' because it does not exist.
+At line:1 char:1
++ ls \src\migrations
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\src\migrations:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls src
+
+
+    Directory: C:\Users\Admin\Projects\spotify-data-pipeline\src
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/16/2026  11:01 AM                migrations
+d-----         1/16/2026  10:55 AM                utils
+d-----         1/16/2026  10:56 AM                __pycache__
+-a----         1/16/2026  10:49 AM            845 main.py
+-a----         1/16/2026  10:46 AM            455 qa_day2_counts.py
+-a----         1/16/2026  10:55 AM              0 __init__.py
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls src\migrations
+
+
+    Directory: C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/16/2026  11:02 AM                __pycache__
+-a----         1/16/2026  10:58 AM            452 day2_add_unique.py
+-a----         1/16/2026  11:01 AM            550 day2_dedupe_tracks_mock.py
+-a----         1/16/2026  10:55 AM              0 __init__.py
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls src\migrations
+
+
+    Directory: C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         1/16/2026  11:02 AM                __pycache__
+-a----         1/16/2026  10:58 AM            452 day2_add_unique.py
+-a----         1/16/2026  11:01 AM            550 day2_dedupe_tracks_mock.py
+-a----         1/16/2026  10:55 AM              0 __init__.py
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) ls \src\migrations
+ls : Cannot find path 'C:\src\migrations' because it does not exist.
+At line:1 char:1
++ ls \src\migrations
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\src\migrations:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ls : Cannot find path 'C:\src\migrations' because it does not exist.
+At line:1 char:1
++ ls \src\migrations
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\src\migrations:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) date
+
+Tuesday, January 20, 2026 9:59:22 AM
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) type .env
+SPOTIFY_CLIENT_ID=
+SPOTIFY_CLIENT_SECRET=
+
+# Postgres (local dev)
+DB_NAME=spotify_analytics
+DB_USER=postgres
+DB_PASSWORD=postgres_dev_2026
+DB_HOST=localhost
+DB_PORT=5432
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Get-ChildItem src\utils -Filter *.py | Select-Object Name
+
+Name
+----
+db.py
+file_extract.py
+mock_extract.py
+__init__.py
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Select-String -Path src\utils\*.py -Pattern 
+>> TerminatingError(Select-String): "Missing an argument for parameter 'Pattern'. Specify a parameter of type 'System.String[]' and try again."
+Select-String : Missing an argument for parameter 'Pattern'. Specify a parameter of type 'System.String[]' and try 
+again.
+At line:1 char:36
++ Select-String -Path src\utils\*.py -Pattern
++                                    ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.SelectStringCommand
+Select-String : Missing an argument for parameter 'Pattern'. Specify a parameter of type 'System.String[]' and try
+again.
+At line:1 char:36
++ Select-String -Path src\utils\*.py -Pattern
++                                    ~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Select-String], ParameterBindingException
+    + FullyQualifiedErrorId : MissingArgument,Microsoft.PowerShell.Commands.SelectStringCommand
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Select-String -Path src\utils\*.py -Pattern 'create_engine|sqlalchemy|psycopg2|DATABASE_URL|postgres'
+
+src\utils\db.py:2:import psycopg2
+src\utils\db.py:3:from psycopg2.extras import execute_values
+src\utils\db.py:6:    return psycopg2.connect(
+src\utils\db.py:10:        user=os.getenv("DB_USER", "postgres"),
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) date
+
+Tuesday, January 20, 2026 10:05:28 AM
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) type src\utils\*.py
+import os
+import psycopg2
+from psycopg2.extras import execute_values
+
+def get_conn():
+    return psycopg2.connect(
+        host=os.getenv("DB_HOST", "localhost"),
+        port=int(os.getenv("DB_PORT", "5432")),
+        dbname=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER", "postgres"),
+        password=os.getenv("DB_PASSWORD"),
+    )
+
+def insert_tracks(rows):
+    cols = [
+        "run_id", "extracted_at", "track_id", "track_name", "artist_name",
+        "album_name", "release_date", "popularity", "duration_ms", "source"
+    ]
+    values = [[r.get(c) for c in cols] for r in rows]
+
+    sql = f"""
+          INSERT INTO raw.tracks_mock ({','.join(cols)})
+          VALUES %s
+          ON CONFLICT (track_id, source) DO NOTHING
+          """
+
+
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+           execute_values(cur, sql, values)
+        conn.commit()
+import csv
+import json
+import os
+from datetime import datetime, timezone
+from typing import Dict, List, Any
+
+
+def _utc_now_iso() -> str:
+    # Example: 2026-01-16T18:05:12Z
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def _normalize_track(row: Dict[str, Any], run_id: str, source: str) -> Dict[str, Any]:
+    """
+    Convert an input row (from JSON/CSV) into the dict format expected by utils.db.insert_tracks().
+    """
+    # Defensive parsing helpers
+    def to_int(v):
+        if v is None or v == "":
+            return None
+        try:
+            return int(v)
+        except Exception:
+            return None
+
+    return {
+        "run_id": run_id,
+        "extracted_at": _utc_now_iso(),
+        "track_id": row.get("track_id"),
+        "track_name": row.get("track_name"),
+        "artist_name": row.get("artist_name"),
+        "album_name": row.get("album_name"),
+        "release_date": row.get("release_date"),
+        "popularity": to_int(row.get("popularity")),
+        "duration_ms": to_int(row.get("duration_ms")),
+        "source": source,
+    }
+
+
+def extract_from_files(
+    run_id: str,
+    json_path: str = os.path.join("data", "day2", "input", "json", "tracks.json"),
+    csv_path: str = os.path.join("data", "day2", "input", "csv", "tracks.csv"),
+) -> List[Dict[str, Any]]:
+    """
+    Reads Day 2 JSON + CSV and returns a single list of normalized track rows.
+    """
+    rows: List[Dict[str, Any]] = []
+
+    # --- JSON ---
+    with open(json_path, "r", encoding="utf-8-sig") as f:
+        data = json.load(f)
+        if not isinstance(data, list):
+            raise ValueError(f"JSON input must be a list of objects. Got: {type(data)}")
+        for obj in data:
+            if not isinstance(obj, dict):
+                continue
+            rows.append(_normalize_track(obj, run_id=run_id, source="json"))
+
+    # --- CSV ---
+    with open(csv_path, "r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        for obj in reader:
+            rows.append(_normalize_track(obj, run_id=run_id, source="csv"))
+
+    return rows
+from datetime import datetime, date
+
+def extract_mock(run_id: str):
+    extracted_at = datetime.utcnow()
+    return [
+        {
+            "run_id": run_id,
+            "extracted_at": extracted_at,
+            "track_id": "mock_001",
+            "track_name": "Blinding Lights",
+            "artist_name": "The Weeknd",
+            "album_name": "After Hours",
+            "release_date": date(2019, 11, 29),
+            "popularity": 95,
+            "duration_ms": 200040,
+            "source": "mock",
+        },
+        {
+            "run_id": run_id,
+            "extracted_at": extracted_at,
+            "track_id": "mock_002",
+            "track_name": "bad guy",
+            "artist_name": "Billie Eilish",
+            "album_name": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+            "release_date": date(2019, 3, 29),
+            "popularity": 90,
+            "duration_ms": 194088,
+            "source": "mock",
+        },
+    ]
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) daate
+daate : The term 'daate' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ daate
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (daate:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+daate : The term 'daate' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+At line:1 char:1
++ daate
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (daate:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) date
+
+Tuesday, January 20, 2026 10:10:48 AM
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Get-ChildItem src\utils -Filter *.py | Select-Object Name
+
+Name
+----
+db.py
+file_extract.py
+mock_extract.py
+__init__.py
+
+
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\migrations\day3_create_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\migrations\day3_create_clean_tracks.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations\day3_create_clean_tracks.py", line 16, in <module>
+    from src.utils.db import get_conn  # adjust if your file name differs
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'src'
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\migrations\day3_create_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad src\migrations\day3_create_clean_tracks.py
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) python src\migrations\day3_create_clean_tracks.py
+Traceback (most recent call last):
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations\day3_create_clean_tracks.py", line 114, in <module>
+    run()
+    ~~~^^
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\migrations\day3_create_clean_tracks.py", line 108, in run
+    with get_conn() as conn:
+         ~~~~~~~~^^
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\src\utils\db.py", line 6, in get_conn
+    return psycopg2.connect(
+           ~~~~~~~~~~~~~~~~^
+        host=os.getenv("DB_HOST", "localhost"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        password=os.getenv("DB_PASSWORD"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Admin\Projects\spotify-data-pipeline\.venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: fe_sendauth: no password supplied
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) notepad .env
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+PS C:\Users\Admin\Projects\spotify-data-pipeline>
+(.venv) Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260120102434
+**********************

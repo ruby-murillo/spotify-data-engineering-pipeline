@@ -1,0 +1,35 @@
+mkdir Projects/spotify-data-pipeline
+mkdir Projects\spotify-data-pipeline
+dir
+cd Projects
+dir
+ cd spotify-data-pipeline
+pwd
+dir
+cd
+history
+doskey /history > day0_cmd_history.txt
+dir
+cat day0_cmd_history.txt
+type day0_cmd_history.txt
+ren day0_cmd_history.txt day0_setup_cmd_history.txt
+dir
+date
+datetime
+python -m env venv
+python -m venv venv
+venv\Scripts\activate
+doskey /history > day0_setup_cmd_history.txt
+type day0_setup_cmd_history.txt | more
+pip install pandas requests psycopg2-binary python-dotenv
+where python
+where pip
+python -m pip install pandas requests psycopg2-binary python-dotenv
+python -m pip install --upgrade pip
+pip --version
+python -m pip --version
+where pip
+python -m pip --version
+psql --version
+wmic os get osarchitecture
+doskey /history > day0_setup_cmd_history.txt

@@ -1,0 +1,50 @@
+dir /s /b "spotify*de*"
+cd
+clear
+cls
+dir
+date
+python -c "import sys; print(sys.executable)"
+echo %VIRTUAL_ENV%
+python -c "import sys; print(sys.executable)"
+dir
+notepad reqquirements.txt
+dir
+rename reqquirements.txt requirements.txt
+notepad requirements.txt
+pip install -r requirements.txt
+echo %VIRTUAL_ENV%
+.venv\Scripts\activate
+pip install -r requirements.txt
+python -m pip install -r requirements.txt
+python,exe -m pip install --upgrade pip
+python.exe -m pip install --upgrade pip
+python -c "import dotenv, psycopg2, requests, pandas; print('deps ok')"
+psql --version
+dir "C:\Program Files\PostgreSQL"
+cd "C:\Program Files\PostgreSQL\17\bin"
+psql -U postgres -h locaalhost -p 5432
+psql -U postgres -h localhost -p 5432
+notepad .env
+cd %USERPROFILE%\Projects\spotify-data-pipeline
+notepad .env
+mkdir src
+mkdir src\utils
+dir
+type nul > src\main.py
+type nul > src\utils\db.py
+type nul > src\utils\mock_extract.py
+notepad src\utils\db.py
+notepad src\utils\mock_extract.py
+notepad notepad src\main.py
+notepad src\main.py
+python src\main.py
+psql -U postgres -h localhost -p 5432 -d spotify_analytics
+cd "C:\Program Files\PostgreSQL\17\bin"
+psql -U postgres -h localhost -p 5432 -d spotify_analytics
+postgres_dev_2026
+psql -U postgres -h localhost -p 5432 -d spotify_analytics
+cd %USERPROFILE%\Projects\spotify-data-pipeline
+doskey /history > logs\Spotify_PreDay2_Command_History.txt
+mkdir logs
+doskey /history > logs\Spotify_PreDay2_Command_History.txt
