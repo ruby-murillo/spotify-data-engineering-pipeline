@@ -2,3 +2,6 @@ python-dotenv
 requests
 psycopg2-binary
 pandas
+matplotlib
+psycopg2-binary
+python-dotenv
