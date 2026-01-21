@@ -1,4 +1,4 @@
-# Spotify Data Engineering Portfolio
+# Spotify Data Engineering Pipeline
  
 ## Problem
 Raw music data arrives from multiple sources and formats, creating challenges
